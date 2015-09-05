@@ -1,0 +1,15 @@
+{
+  "name": "Type-Node",
+  "version": "0.0.0",
+  "description": "Type-Node",
+  "main": "app.js",
+  "author": {
+    "name": "maxra",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
