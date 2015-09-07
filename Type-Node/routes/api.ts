@@ -24,7 +24,7 @@ module.exports =  function(app, express) {
         var api = express.Router();
 
 
-        api.post('/signup', function (req, res) {
+    api.post('/signup', function (req, res) {
 
         var user = new User({
             name: req.body.name,
@@ -82,6 +82,31 @@ module.exports =  function(app, express) {
             }
         });
     });
+
+    //Middleware
+    api.use(function(req, res, next) {
+        console.log("Someone just entered our Website");
+        var token = req.body.token || req.param('token') || req.headers['x-access-token'];
+        
+        //check if token exists
+        if (token) {
+            jsonwebtoken.verify(token, secretKey, function(err, decoded) {
+                if (err) res.status(403).send({ success: false, message: "Failed to authenticate user" });
+                else {
+                    req.decoded = decoded;
+                    next();
+                }
+            });
+        } else {
+            res.status(403).send({success:false, message:"No Token Provided"});
+        }
+    });
+
+    //Destination B // provide legitimate token
+    api.get('/', function(req, res) {
+        res.send("Hello World!");
+    });
+
 
     return api;
 
