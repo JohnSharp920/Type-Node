@@ -1,4 +1,5 @@
 ﻿var User = require('../models/user.ts');
+var Story = require('../models/story.ts');
 
 var config = require('../config');
 
@@ -103,10 +104,33 @@ module.exports =  function(app, express) {
     });
 
     //Destination B // provide legitimate token
-    api.get('/', function(req, res) {
-        res.send("Hello World!");
-    });
+    api.route('/')
+        .post(function (req, res) {
+            var story = new Story({
+                creator: req.decoded._id,
+                content: req.body.content
+            });
+            story.save(function(err) {
+                if (err) {
+                    res.send(err);
+                    return;
+                }
+                res.json({ message: "New Story Created!" });
+            });
+        })
+        .get(function(req, res) {
+            Story.find({ creator: req.decoded._id }, function(err, stories) {
+                if (err) {
+                    res.send(err);
+                    return;
+                }
+                res.json(stories);
+            });
+        });
 
+    api.get('/me', function(req, res) {
+        res.json(req.decoded._id);
+    });
 
     return api;
 

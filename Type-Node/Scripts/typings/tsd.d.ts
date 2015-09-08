@@ -7,3 +7,5 @@
 /// <reference path="mongoose/mongoose.d.ts" />
 /// <reference path="bcrypt/bcrypt.d.ts" />
 /// <reference path="jsonwebtoken/jsonwebtoken.d.ts" />
+/// <reference path="angularjs/angular.d.ts" />
+/// <reference path="jquery/jquery.d.ts" />

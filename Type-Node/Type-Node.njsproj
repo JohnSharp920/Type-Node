@@ -33,17 +33,27 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="views\myIndex.jade" />
+    <Content Include="content\bootstrap.css" />
+    <Content Include="public\app\views\index.html" />
+    <Content Include="public\app\views\pages\home.html" />
+    <Content Include="public\app\views\pages\login.html" />
+    <Content Include="views\index.jade" />
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="config.ts" />
     <TypeScriptCompile Include="models\story.ts" />
     <TypeScriptCompile Include="models\user.ts" />
+    <TypeScriptCompile Include="public\app\app.routes.ts" />
+    <TypeScriptCompile Include="public\app\app.ts" />
+    <TypeScriptCompile Include="public\app\controller\mainCtrl.ts" />
+    <TypeScriptCompile Include="public\app\services\authService.ts" />
+    <TypeScriptCompile Include="public\app\services\user.ts" />
     <TypeScriptCompile Include="routes\api.ts" />
-    <TypeScriptCompile Include="routes\index.ts" />
-    <TypeScriptCompile Include="routes\myIndex.ts" />
-    <TypeScriptCompile Include="routes\user.ts" />
+    <TypeScriptCompile Include="Scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\bcrypt\bcrypt.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\body-parser\body-parser.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\express\express.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jsonwebtoken\jsonwebtoken.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\mime\mime.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\mongoose\mongoose.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\morgan\morgan.d.ts" />
@@ -51,25 +61,31 @@
     <TypeScriptCompile Include="Scripts\typings\serve-static\serve-static.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\stylus\stylus.d.ts" />
     <Content Include="package.json" />
-    <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="Scripts\tsd.json" />
-    <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <TypeScriptCompile Include="Scripts\typings\tsd.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="info\" />
     <Folder Include="models\" />
+    <Folder Include="content\" />
     <Folder Include="public\" />
-    <Folder Include="public\images\" />
-    <Folder Include="public\javascripts\" />
-    <Folder Include="public\stylesheets\" />
+    <Folder Include="public\app\controller\" />
+    <Folder Include="public\app\views\pages\" />
+    <Folder Include="public\app\services\" />
+    <Folder Include="public\app\stylesheets\" />
+    <Folder Include="public\app\views\" />
+    <Folder Include="public\app\" />
     <Folder Include="routes\" />
     <Folder Include="Scripts\" />
     <Folder Include="Scripts\typings\" />
+    <Folder Include="Scripts\typings\angularjs\" />
+    <Folder Include="Scripts\typings\bcrypt\" />
     <Folder Include="Scripts\typings\body-parser\" />
     <Folder Include="Scripts\typings\express\" />
+    <Folder Include="Scripts\typings\jquery\" />
+    <Folder Include="Scripts\typings\jsonwebtoken\" />
     <Folder Include="Scripts\typings\mime\" />
     <Folder Include="Scripts\typings\mongoose\" />
     <Folder Include="Scripts\typings\morgan\" />
